@@ -4,7 +4,7 @@
   "description": "Reproductor de radio con las principales estaciones chilenas, ligero y rápido, optimizado para Blogger.",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#1a1e24",
+  "background_color": "#28292a",
   "theme_color": "#28292a",
   "icons": [
     {
