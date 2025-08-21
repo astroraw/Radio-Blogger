@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {
         name: '102.1 | Oasis',
         src: 'https://mdstrm.com/audio/5c915497c6fd7c085b29169d/icecast.audio'
+    }, {
+        name: '104.1 | Romántica',
+        src: 'https://mdstrm.com/audio/639b78f7ff35df084fa7f964/icecast.audio'
     }, ];
 
     function setPlayerState({ loading = false, playing = false, error = false }) {
