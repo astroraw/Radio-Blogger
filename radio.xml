@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='true' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'><b:attr name='xmlns' value=''/><b:attr name='xmlns:b' value=''/><b:attr name='xmlns:expr' value=''/><b:attr name='xmlns:data' value=''/>
+  
+  &lt;head&gt;
+  
+  <title><data:blog.title.escaped/></title>
+  
+  <meta expr:charset='data:blog.encoding'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='max-image-preview:large, noarchive' name='robots'/>
+  <link expr:href='data:blog.url.canonical' rel='canonical'/>
+  
+  <b:if cond='!data:view.isError'>
+    <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription.escaped : (data:view.isSingleItem ? data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false } : (data:blog.pageName ? data:blog.pageName.escaped : data:blog.title.escaped))' name='description'/>
+  </b:if>
+  
+  <link expr:href='data:blog.blogspotFaviconUrl' rel='icon'/>
+  <link expr:href='data:blog.blogspotFaviconUrl' rel='apple-touch-icon' sizes='180x180'/>
+  <link href='https://cdn.jsdelivr.net/gh/astroraw/radio-blogger@v1.0.3/manifest.json' rel='manifest'/>
+  
+  <meta content='#28292a' name='theme-color'/>
+  <meta content='#28292a' name='msapplication-navbutton-color'/>
+  <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'/>
+  
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:blog.pageName ? data:blog.pageName.escaped : data:blog.title.escaped' property='og:title'/>
+  <meta expr:content='data:blog.pageName ? data:blog.pageName.escaped : data:blog.title.escaped' name='twitter:title'/>
+  <meta expr:content='data:blog.url.canonical' property='og:url'/>
+  <meta expr:content='data:blog.url.canonical' name='twitter:url'/>
+  <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+  <meta expr:content='data:view.isMultipleItems ? &quot;website&quot; : &quot;article&quot;' property='og:type'/>
+  <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription.escaped : (data:view.isSingleItem ? data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false } : (data:blog.pageName ? data:blog.pageName.escaped : data:blog.title.escaped))' property='og:description'/>
+  <meta expr:content='data:blog.metaDescription ? data:blog.metaDescription.escaped : (data:view.isSingleItem ? data:post.snippet.escaped snippet { length: 147, links: false, linebreaks: false, ellipsis: false } : (data:blog.pageName ? data:blog.pageName.escaped : data:blog.title.escaped))' name='twitter:description'/>
+  
+  <b:if cond='data:blog.postImageUrl'>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' property='og:image'/>
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 0)' name='twitter:image:src'/>
+    <b:else/>
+    <b:with value='{url: &quot;AGREGAR_IMAGEN&quot;}' var='thumb'>
+      <meta expr:content='data:thumb.url' property='og:image'/>
+      <meta expr:content='data:thumb.url' name='twitter:image:src'/>
+    </b:with>
+  
+  </b:if>
+  
+  <link href='//cdn.jsdelivr.net' rel='dns-prefetch'/>
+  <link href='//cdnjs.cloudflare.com' rel='dns-prefetch'/>
+  
+  <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://blogger.googleusercontent.com' rel='preconnect'/>
+  
+  <link as='font' crossorigin='anonymous' href='https://fonts.gstatic.com/s/googlesanstext/v24/5aUu9-KzpRiLCAt4Unrc-xIKmCU5qEp2iw.woff2' rel='preload' type='font/woff2'/>
+  
+  <script type='application/ld+json'>
+  {
+    &quot;context&quot;: &quot;https://schema.org&quot;,
+    &quot;type&quot;: &quot;WebSite&quot;,
+    &quot;url&quot;: &quot;<data:blog.homepageUrl.canonical/>&quot;,
+    &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+    &quot;alternateName&quot;: &quot;<data:blog.title/>&quot;,
+    &quot;potentialAction&quot;: [
+      {
+      &quot;type&quot;: &quot;ListenAction&quot;,
+        &quot;target&quot;: &quot;<data:blog.homepageUrl.canonical/>&quot;
+      }
+    ]
+  }
+  </script>
+
+<b:skin><![CDATA[
+
+:root {
+  --color-bg-dark-bar: #28292a;
+  --color-bg-dark: #1a1e24;
+  --color-bg-medium: #282c34;
+  --color-bg-light: #2e323a;
+  --color-text-light: #f0f0f0;
+  --color-accent: #00bcd4;
+  --color-active-bg: #3b4e60;
+  --color-active-text: #e5f3ff;
+  --color-border: #3c424a;
+  --color-transparent-accent: rgba(155, 186, 211, 0.2);
+  --color-spinner-border: rgba(240, 240, 240, 0.3);
+  --color-error-text: #ff4d4d;
+
+  --font-main: 'Google Sans Text', Arial, sans-serif;
+  --font-size-base: 15px;
+  --font-size-station-name: 1.4rem;
+  --font-size-list-item: 1.2rem;
+
+  --player-button-size: 2.3rem;
+  --icon-size: 24px;
+  --spinner-size: 20px;
+
+  --border-radius-main: 5px;
+  --list-item-padding: 15px 20px;
+
+  --transition-color-bg: background-color 0.3s ease, color 0.3s ease;
+  --transition-default: all 0.3s ease;
+
+  --focus-outline: 2px solid var(--color-accent);
+  --focus-outline-offset: 2px;
+}
+
+@font-face {
+  font-family: 'Google Sans Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/googlesanstext/v24/5aUu9-KzpRiLCAt4Unrc-xIKmCU5qEp2iw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg-dark);
+  overflow-y: auto;
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  transition: var(--transition-color-bg);
+}
+
+.radio-player-container {
+  max-width: 480px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: var(--color-bg-medium);
+  border-radius: var(--border-radius-main);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-color-bg), box-shadow 0.3s ease;
+}
+
+.radio-player {
+  display: flex;
+  align-items: center;
+  padding: var(--list-item-padding);
+  background-color: var(--color-bg-dark-bar);
+  border-top-left-radius: var(--border-radius-main);
+  border-top-right-radius: var(--border-radius-main);
+  flex-shrink: 0;
+  color: var(--color-active-text);
+  transition: var(--transition-color-bg);
+}
+
+.player-button {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  padding: 0;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--player-button-size);
+  height: var(--player-button-size);
+  border-radius: 50%;
+  transition: var(--transition-color-bg);
+}
+
+.player-button:hover:not(:disabled) {
+  background-color: var(--color-transparent-accent);
+}
+
+.player-button:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.player-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.player-button .icon {
+  fill: currentColor;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.player-button .pause-icon {
+  display: none;
+}
+
+.radio-player.playing .player-button .play-icon {
+  display: none;
+}
+
+.radio-player.playing .player-button .pause-icon {
+  display: block;
+}
+
+.station-name {
+  flex-grow: 1;
+  font-size: var(--font-size-station-name);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.radio-player.error .station-name,
+.radio-player.error .player-button {
+  color: var(--color-error-text);
+}
+
+.loading-spinner {
+  border: 3px solid var(--color-spinner-border);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 50%;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  aspect-ratio: 1 / 1;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  display: none;
+  will-change: transform;
+}
+
+.radio-player.loading .loading-spinner {
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100dvh - 105px);
+  overflow-y: auto;
+  background-color: var(--color-bg-light);
+  border-bottom-left-radius: var(--border-radius-main);
+  border-bottom-right-radius: var(--border-radius-main);
+  flex-grow: 1;
+  scroll-padding: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-bg-dark);
+}
+
+.radio-list li {
+  padding: var(--list-item-padding);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  font-size: var(--font-size-list-item);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-light);
+  transition: var(--transition-color-bg);
+}
+
+.radio-list li:last-child {
+  border-bottom: none;
+}
+
+.radio-list li:hover {
+  background-color: var(--color-transparent-accent);
+}
+
+.radio-list li:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.radio-list li.active {
+  background-color: var(--color-active-bg);
+  color: var(--color-active-text);
+  font-weight: bold;
+}
+
+.radio-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.radio-list::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+.radio-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 4px;
+  border: 2px solid var(--color-bg-dark);
+}
+
+.radio-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
+
+#cookieChoiceInfo,
+#cookieChoiceInfo * {
+  box-sizing: border-box;
+}
+
+#cookieChoiceInfo {
+  padding: 1.5rem;
+  inset: auto 0 0;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: cookies 1s forwards;
+  transform: translateY(200%);
+}
+
+#cookieChoiceInfo .cookie-choices-inner {
+  font-size: 1rem;
+  color: #fff;
+}
+
+#cookieChoiceInfo .cookie-choices-text {
+  margin: 0;
+  display: inline;
+}
+
+#cookieChoiceInfo .cookie-choices-button {
+  text-transform: initial;
+  font-weight: 700;
+  margin: 0;
+}
+
+#cookieChoiceInfo .cookie-choices-button:hover {
+  color: #2196f3;
+}
+
+@keyframes cookies {
+  to {
+    transform: translateY(0);
+  }
+}
+
+]]></b:skin>
+
+&lt;!--<head/>--&gt;&lt;/head&gt;
+  
+  <body>
+    <main>
+      <div class='radio-player-container'>
+        <div class='radio-player'>
+          <button aria-label='Reproducir o Pausar Radio' class='player-button' id='play-pause-btn'>
+            <svg class='icon play-icon' viewBox='0 0 24 24'>
+              <path d='M8 5v14l11-7z'/>
+            </svg>
+            <svg class='icon pause-icon' viewBox='0 0 24 24'>
+              <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/>
+            </svg>
+          </button>
+          <span aria-live='polite' class='station-name' id='current-station-name'>Selecciona una radio</span>
+          <div class='loading-spinner' id='loading-spinner'/>
+        </div>
+        <ul aria-label='Estaciones de radio disponibles' class='radio-list' id='radio-list' role='listbox'/>
+      </div>
+    </main>
+    
+    <b:section id='astroRAW' showaddelement='false'/>
+    
+    <script async='async' crossorigin='anonymous' src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js'/>
+    <script crossorigin='anonymous' defer='defer' src='https://cdn.jsdelivr.net/gh/astroraw/radio-blogger@v1.0.3/radio.min.js'/>
+    <script async='async' crossorigin='anonymous' src='https://cdn.jsdelivr.net/gh/astroraw/bjs@2/cookienotice.js'></script>
+
+    &lt;textarea hidden id=&#39;bjs&#39;&gt;</body>&lt;/textarea&gt;&lt;/body&gt;
+</html>
